@@ -1,0 +1,15 @@
+{
+  "name": "everybody777-gql",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "gen": "graphql-codegen"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.8",
+    "@graphql-codegen/kotlin": "^1.17.8",
+    "@graphql-codegen/typescript": "^1.17.8",
+    "graphql": "^15.3.0"
+  }
+}

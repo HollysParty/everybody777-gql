@@ -1,0 +1,11 @@
+schema: "./schema/**.graphql"
+generates:
+  ./gen/ts/types.d.ts: # https://graphql-code-generator.com/docs/plugins/typescript
+    plugins:
+      - typescript
+  ./gen/kt/Types.kt: # https://graphql-code-generator.com/docs/plugins/kotlin
+    plugins:
+      - kotlin
+    config:
+      package: custom.package.name
+      withTypes: true
