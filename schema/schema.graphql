@@ -1,0 +1,44 @@
+type Sketch {
+  id: ID
+  name: String
+  width: Int
+  height: Int
+  numOfWidth: Int
+  numOfHeight: Int
+}
+
+type Tile {
+  order: Int!
+  sketchUrl: String!
+}
+
+enum ConnectionResult {
+  TILE_ALLOCATED
+  NO_REMAINED
+}
+
+type SocketConnection {
+  cliendId: ID!
+  url: String!
+}
+
+type CanvasConnection {
+  result: ConnectionResult!
+  socket: SocketConnection
+  tile: Tile
+}
+
+type ScreenConnection {
+  socket: SocketConnection!
+  tiles: [Tile]!
+}
+
+type Query {
+  connectByCanvas: CanvasConnection!
+  connectByScreen: ScreenConnection!
+}
+
+schema {
+  query: Query
+  # mutation: Mutation
+}
